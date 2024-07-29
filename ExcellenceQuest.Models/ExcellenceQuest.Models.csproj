@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BulkUpload\**" />
+    <Compile Remove="Profile\**" />
+    <EmbeddedResource Remove="BulkUpload\**" />
+    <EmbeddedResource Remove="Profile\**" />
+    <None Remove="BulkUpload\**" />
+    <None Remove="Profile\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ProjectInformationModel.cs" />
+  </ItemGroup>
+
+</Project>

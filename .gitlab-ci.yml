@@ -1,0 +1,17 @@
+default:		
+    tags:
+        - docker
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t my-dotnet-app .
+
+deploy:
+  stage: deploy
+  script:
+    - docker run -d -p 8082:8082 my-dotnet-app 
