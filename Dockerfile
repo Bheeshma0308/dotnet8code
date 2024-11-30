@@ -10,5 +10,5 @@ RUN dotnet publish -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-EXPOSE 8082
+EXPOSE 3333
 ENTRYPOINT ["dotnet", "ExcellenceQuest.API.dll"]
