@@ -14,7 +14,12 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    zipAfterPublish: false
+    modifyOutputPath: false
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
