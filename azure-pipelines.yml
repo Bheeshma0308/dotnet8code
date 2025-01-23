@@ -21,8 +21,8 @@ steps:
     zipAfterPublish: false
     modifyOutputPath: false
 
-- task: PublishPipelineArtifact@1
+- task: PublishBuildArtifacts@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'dotnet-artifacts'
-    publishLocation: 'pipeline'
+    PathtoPublish: 'publish'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
