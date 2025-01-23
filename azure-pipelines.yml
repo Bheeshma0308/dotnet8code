@@ -17,12 +17,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish' 
-    projects: '**/*.csproj'
-    configuration: 'Release'
-    outputPath: '$(Build.ArtifactStagingDirectory)/publish' 
+    outputPath: '$(Build.ArtifactStagingDirectory)' 
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/publish' 
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     ArtifactName: 'drop'
     publishLocation: 'Container'
