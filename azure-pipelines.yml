@@ -6,10 +6,6 @@ pool:
 
 steps:
 
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '8.0'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
