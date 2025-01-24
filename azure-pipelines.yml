@@ -13,20 +13,16 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    publishWebProjects: true
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.BinariesDirectory)'  # Adjust this path as necessary
-    Contents: '**'  # Specify what files to include
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
+    projects: '**/*.csproj'
+    configuration: 'Release'
+    outputPath: '$(Build.ArtifactStagingDirectory)' 
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'dotnet-artifacts'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
