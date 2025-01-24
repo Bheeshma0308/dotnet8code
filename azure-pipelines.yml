@@ -15,11 +15,11 @@ steps:
     command: 'build'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish' 
-    outputPath: 'publish' 
+    command: 'publish'
+    publishWebProjects: true
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-    ArtifactName: 'drop'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'dotnet-artifacts'
     publishLocation: 'Container'
