@@ -13,13 +13,13 @@ steps:
   displayName: dotnet build
 
 - script: dotnet publish
-  displayName: dotnet publish
+  displayName: dotnet publish -o $(Build.ArtifactStagingDirectory)
   
 
 
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)\bin\Release\net8.0'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
