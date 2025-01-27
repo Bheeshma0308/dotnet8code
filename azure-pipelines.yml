@@ -15,20 +15,7 @@ steps:
 - script: dotnet publish
   displayName: dotnet publish
   
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.BuildId).zip'
-    replaceExistingArchive: true
 
-- task: ExtractFiles@1
-  inputs:
-    archiveFilePatterns: '**/*.zip'
-    destinationFolder: '$(Build.ArtifactStagingDirectory)'
-    cleanDestinationFolder: true
-    overwriteExistingFiles: false
 
 
 - task: PublishBuildArtifacts@1
