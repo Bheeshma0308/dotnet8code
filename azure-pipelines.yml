@@ -11,12 +11,12 @@ steps:
 - script: dotnet build
   displayName: dotnet build
 
-- script: dotnet publish -o $(Build.ArtifactStagingDirectory)
+- script: dotnet publish -o $(Build.ArtifactStagingDirectory)\publish
   displayName: dotnet publish
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
