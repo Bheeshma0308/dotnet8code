@@ -15,3 +15,10 @@ steps:
   displayName: dotnet publish
 
 
+
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)\publish'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
