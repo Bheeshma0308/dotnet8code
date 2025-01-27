@@ -6,14 +6,14 @@ pool:
 
 steps:
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
+- script: dotnet restore
+  displayName: dotnet restore
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
+- script: dotnet build
+  displayName: dotnet build
 
+- script: dotnet publish
+  displayName: dotnet publish
 
 
 - task: PublishPipelineArtifact@1
