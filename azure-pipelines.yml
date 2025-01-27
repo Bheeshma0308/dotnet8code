@@ -17,8 +17,8 @@ steps:
   
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**/publish'
+    SourceFolder: 'D:\a\1\s\ExcellenceQuest.API\bin\Release\net8.0'
+    Contents: '**/publish/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 
