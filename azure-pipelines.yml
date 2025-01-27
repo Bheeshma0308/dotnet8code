@@ -5,18 +5,14 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-
 - script: dotnet restore
   displayName: dotnet restore
 
 - script: dotnet build
   displayName: dotnet build
 
-- script: dotnet publish
-  displayName: dotnet publish -o $(Build.ArtifactStagingDirectory)
-  
-
-
+- script: dotnet publish -o $(Build.ArtifactStagingDirectory)
+  displayName: dotnet publish
 
 - task: PublishBuildArtifacts@1
   inputs:
