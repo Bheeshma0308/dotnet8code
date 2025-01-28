@@ -11,12 +11,12 @@ steps:
 - script: dotnet build
   displayName: dotnet build
 
-- script: dotnet publish -o $(Build.ArtifactStagingDirectory)
+- script: dotnet publish 
   displayName: dotnet publish
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    rootFolderOrFile: '$(Build.SourcesDirectory)\ExcellenceQuest.API\bin\Release\net8.0'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
@@ -27,3 +27,5 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+    
+
