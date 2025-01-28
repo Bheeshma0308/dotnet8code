@@ -18,7 +18,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)\publish'
+    PathtoPublish: '$(Build.SourcesDirectory)\ExcellenceQuest.API\bin\Release\net8.0'
     ArtifactName: 'drop'
     publishLocation: 'Container'
     
