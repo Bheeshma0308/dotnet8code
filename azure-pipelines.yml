@@ -16,7 +16,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)\ExcellenceQuest.API\bin\Release\net8.0'
+    rootFolderOrFile: '$(Build.SourcesDirectory)\ExcellenceQuest.API\bin\Release\net8.0\publish'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
