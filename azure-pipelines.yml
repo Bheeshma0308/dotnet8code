@@ -32,5 +32,7 @@ steps:
     vmsAdminUserName: 'windowsvm'
     vmsAdminPassword: 'Bharathi@123'
     TargetPath: 'c:\inetpub\wwwroot'
+    enableAzCopy: true
+
     
 
