@@ -29,6 +29,6 @@ steps:
     MachineNames: '172.208.30.212'
     AdminUserName: 'windowsvm'
     AdminPassword: 'Bharathi@123'
-    TargetPath: 'c:\inetpub\wwwroot' 
+    TargetPath: 'c:\ ' 
     
 
