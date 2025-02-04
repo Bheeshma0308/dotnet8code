@@ -22,12 +22,16 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-
-- task: WindowsMachineFileCopy@2
+- task: AzureFileCopy@6
   inputs:
     SourcePath: '$(Build.SourcesDirectory)\ExcellenceQuest.API\bin\Release\net8.0\publish'
-    MachineNames: '48.217.86.175'
-    AdminUserName: 'windowsvm'
-    AdminPassword: 'Bharathi@123'
+    azureSubscription: 'Free Trial(46f9ef38-22ea-47f1-91c9-c2ebcf8d74eb)'
+    Destination: 'AzureVMs'
+    storage: 'storageeeeeeeeee1211'
+    resourceGroup: 'WINDOWSVM_GROUP'
+    vmsAdminUserName: 'windowsvm'
+    vmsAdminPassword: 'Bharathi@123'
     TargetPath: 'c:\inetpub'
+
+
 
