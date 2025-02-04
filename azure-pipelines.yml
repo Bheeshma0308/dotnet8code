@@ -22,14 +22,6 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      Write-Host "Checking AzCopy version..."
-      azcopy --version
-      if ($?) { Write-Host "✅ AzCopy is installed." } else { Write-Host "❌ AzCopy is missing." }
-
 - task: AzureFileCopy@6
   inputs:
     SourcePath: '$(Build.SourcesDirectory)\ExcellenceQuest.API\bin\Release\net8.0\publish'
