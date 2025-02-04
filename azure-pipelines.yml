@@ -29,5 +29,6 @@ steps:
     MachineNames: '172.210.62.200'
     AdminUserName: 'windowsvm'
     AdminPassword: 'Bharathi@123'
-    TargetPath: 'c:\inetpub' 
+    TargetPath: 'c:\inetpub'
+    winRMProtocol: HTTP
 
